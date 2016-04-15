@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Adjectives visualization</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <h2>
+    <div class='flex-container'>
+      <span class="change">Awesome</span>
+    </div>
+    <span class="status">Juniors</span>
+</h2>
+    <script>
+    (function() {
+        var words = ['Happy', 'Glorious', 'Amazing', 'Jocular', 'Beautiful', 'Stellar', 'Fantastic', 'Glowing', 'Weary', 'Propitious', 'Wonderful', 'Marvelous', 'Delightful', 'Lovely', 'Vivacious', 'Fabulous', 'Exuberant', 'Scrumptious', 'Cooperative', 'Asteroid-Dodging', 'Salubrious', 'Well-rested', 'Context-retaining', 'Socializing', 'Brobdignagian', 'Supine', 'Reactive', 'Dedicated', 'Excellent', 'Silly', 'Coherent', 'Sanguine', 'Studious', 'Vibrant', 'Dilligent', 'Oxidizing', 'Magnificent', 'Smarty-pants', 'Tenacious', 'Shiny', 'Hypnotic', 'Authentic', 'Prominent', 'Winsome', 'Creative', 'Accomplished', 'Scootin', 'Francophone', 'Mirthful', 'Judicious', 'Aurelian', 'Jovial', 'Incredible', 'Ripened', 'Adventurous', 'Resilient', 'Jaunty', 'Wizened', 'Jurrasic', 'Astute', 'Emerald', 'Brilliant', 'Solo-ing'],
+            i = 0;
+        setInterval(function() {
+            $('.change').fadeOut(function() {
+                $(this).html(words[i = (i + 1) % words.length]).fadeIn();
+            });
+        }, 2000);
+      $('.status').click(function() {
+        if ($(this).text() === 'Juniors') {
+          $(this).fadeOut(function() {
+            $(this).text('Seniors').fadeIn();
+          });
+        } else {
+          $(this).fadeOut(function() {
+            $(this).text('Juniors').fadeIn();
+          });
+        }
+      })
+    })();
+    </script>
+</body>
+
+</html>
